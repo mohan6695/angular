@@ -1,0 +1,1522 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2021-04-02T19:02:40Z"
+    labels:
+      run: mycluster
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:run: {}
+        f:spec:
+          f:containers:
+            k:{"name":"mycluster"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":4200,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kubectl
+      operation: Update
+      time: "2021-04-02T19:02:40Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.4.0.5"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-04-02T19:03:02Z"
+    name: mycluster
+    namespace: default
+    resourceVersion: "1363"
+    selfLink: /api/v1/namespaces/default/pods/mycluster
+    uid: b4b60866-17f4-4fd9-8a75-6b749d62d575
+  spec:
+    containers:
+    - image: mnarsupa/angular:latest
+      imagePullPolicy: Always
+      name: mycluster
+      ports:
+      - containerPort: 4200
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-xkjxb
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: gke-mycluster-default-pool-e91db75c-b1sp
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: default-token-xkjxb
+      secret:
+        defaultMode: 420
+        secretName: default-token-xkjxb
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2021-04-02T19:02:41Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2021-04-02T19:03:02Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2021-04-02T19:03:02Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2021-04-02T19:02:40Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://f6de87c35ee4247ccb34bf46d271eee76acb191e5235febf7668dfce0d671a2c
+      image: mnarsupa/angular:latest
+      imageID: docker-pullable://mnarsupa/angular@sha256:61de7432a9cd6f669d415927f92b51fab0b864dd510c24aed3ceff722b06ce1b
+      lastState: {}
+      name: mycluster
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2021-04-02T19:03:02Z"
+    hostIP: 10.142.0.17
+    phase: Running
+    podIP: 10.4.0.5
+    podIPs:
+    - ip: 10.4.0.5
+    qosClass: BestEffort
+    startTime: "2021-04-02T19:02:41Z"
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      container.googleapis.com/instance_id: "6816780131848869810"
+      csi.volume.kubernetes.io/nodeid: '{"pd.csi.storage.gke.io":"projects/e-arcana-306104/zones/us-east1-c/instances/gke-mycluster-default-pool-e91db75c-b1sp"}'
+      node.alpha.kubernetes.io/ttl: "0"
+      node.gke.io/last-applied-node-labels: cloud.google.com/gke-boot-disk=pd-standard,cloud.google.com/gke-nodepool=default-pool,cloud.google.com/gke-os-distribution=cos,cloud.google.com/machine-family=e2
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2021-04-02T19:01:49Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/instance-type: e2-medium
+      beta.kubernetes.io/os: linux
+      cloud.google.com/gke-boot-disk: pd-standard
+      cloud.google.com/gke-nodepool: default-pool
+      cloud.google.com/gke-os-distribution: cos
+      cloud.google.com/machine-family: e2
+      failure-domain.beta.kubernetes.io/region: us-east1
+      failure-domain.beta.kubernetes.io/zone: us-east1-c
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: gke-mycluster-default-pool-e91db75c-b1sp
+      kubernetes.io/os: linux
+      node.kubernetes.io/instance-type: e2-medium
+      topology.gke.io/zone: us-east1-c
+      topology.kubernetes.io/region: us-east1
+      topology.kubernetes.io/zone: us-east1-c
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"CorruptDockerOverlay2"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentContainerdRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentDockerRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentKubeletRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentUnregisterNetDevice"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"KernelDeadlock"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"ReadonlyFilesystem"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: node-problem-detector
+      operation: Update
+      time: "2021-04-02T19:01:50Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:container.googleapis.com/instance_id: {}
+            f:node.gke.io/last-applied-node-labels: {}
+          f:labels:
+            f:cloud.google.com/gke-boot-disk: {}
+            f:cloud.google.com/gke-nodepool: {}
+            f:cloud.google.com/gke-os-distribution: {}
+            f:cloud.google.com/machine-family: {}
+      manager: gcp-controller-manager
+      operation: Update
+      time: "2021-04-02T19:01:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.4.0.0/24": {}
+        f:status:
+          f:conditions:
+            k:{"type":"NetworkUnavailable"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2021-04-02T19:02:08Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:csi.volume.kubernetes.io/nodeid: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/instance-type: {}
+            f:beta.kubernetes.io/os: {}
+            f:failure-domain.beta.kubernetes.io/region: {}
+            f:failure-domain.beta.kubernetes.io/zone: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+            f:node.kubernetes.io/instance-type: {}
+            f:topology.gke.io/zone: {}
+            f:topology.kubernetes.io/region: {}
+            f:topology.kubernetes.io/zone: {}
+        f:spec:
+          f:providerID: {}
+        f:status:
+          f:addresses:
+            .: {}
+            k:{"type":"ExternalIP"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"Hostname"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"InternalDNS"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"InternalIP"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+          f:allocatable:
+            .: {}
+            f:attachable-volumes-gce-pd: {}
+            f:cpu: {}
+            f:ephemeral-storage: {}
+            f:hugepages-2Mi: {}
+            f:memory: {}
+            f:pods: {}
+          f:capacity:
+            .: {}
+            f:attachable-volumes-gce-pd: {}
+            f:cpu: {}
+            f:ephemeral-storage: {}
+            f:hugepages-2Mi: {}
+            f:memory: {}
+            f:pods: {}
+          f:conditions:
+            .: {}
+            k:{"type":"DiskPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"MemoryPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"NetworkUnavailable"}:
+              .: {}
+              f:type: {}
+            k:{"type":"PIDPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:daemonEndpoints:
+            f:kubeletEndpoint:
+              f:Port: {}
+          f:images: {}
+          f:nodeInfo:
+            f:architecture: {}
+            f:bootID: {}
+            f:containerRuntimeVersion: {}
+            f:kernelVersion: {}
+            f:kubeProxyVersion: {}
+            f:kubeletVersion: {}
+            f:machineID: {}
+            f:operatingSystem: {}
+            f:osImage: {}
+            f:systemUUID: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-04-02T19:02:52Z"
+    name: gke-mycluster-default-pool-e91db75c-b1sp
+    resourceVersion: "24931"
+    selfLink: /api/v1/nodes/gke-mycluster-default-pool-e91db75c-b1sp
+    uid: 04cc8085-b624-4fb8-8064-6437387d5675
+  spec:
+    podCIDR: 10.4.0.0/24
+    podCIDRs:
+    - 10.4.0.0/24
+    providerID: gce://e-arcana-306104/us-east1-c/gke-mycluster-default-pool-e91db75c-b1sp
+  status:
+    addresses:
+    - address: 10.142.0.17
+      type: InternalIP
+    - address: 35.231.53.27
+      type: ExternalIP
+    - address: gke-mycluster-default-pool-e91db75c-b1sp.us-east1-c.c.e-arcana-306104.internal
+      type: InternalDNS
+    - address: gke-mycluster-default-pool-e91db75c-b1sp.us-east1-c.c.e-arcana-306104.internal
+      type: Hostname
+    allocatable:
+      attachable-volumes-gce-pd: "15"
+      cpu: 940m
+      ephemeral-storage: "47093746742"
+      hugepages-2Mi: "0"
+      memory: 2888180Ki
+      pods: "110"
+    capacity:
+      attachable-volumes-gce-pd: "15"
+      cpu: "2"
+      ephemeral-storage: 98868448Ki
+      hugepages-2Mi: "0"
+      memory: 4034036Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: kernel has no deadlock
+      reason: KernelHasNoDeadlock
+      status: "False"
+      type: KernelDeadlock
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: Filesystem is not read-only
+      reason: FilesystemIsNotReadOnly
+      status: "False"
+      type: ReadonlyFilesystem
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: docker overlay2 is functioning properly
+      reason: NoCorruptDockerOverlay2
+      status: "False"
+      type: CorruptDockerOverlay2
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: node is functioning properly
+      reason: NoFrequentUnregisterNetDevice
+      status: "False"
+      type: FrequentUnregisterNetDevice
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: kubelet is functioning properly
+      reason: NoFrequentKubeletRestart
+      status: "False"
+      type: FrequentKubeletRestart
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: docker is functioning properly
+      reason: NoFrequentDockerRestart
+      status: "False"
+      type: FrequentDockerRestart
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: containerd is functioning properly
+      reason: NoFrequentContainerdRestart
+      status: "False"
+      type: FrequentContainerdRestart
+    - lastHeartbeatTime: "2021-04-02T19:02:08Z"
+      lastTransitionTime: "2021-04-02T19:02:08Z"
+      message: RouteController created a route
+      reason: RouteCreated
+      status: "False"
+      type: NetworkUnavailable
+    - lastHeartbeatTime: "2021-04-02T20:08:36Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:36Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:36Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:36Z"
+      lastTransitionTime: "2021-04-02T19:01:57Z"
+      message: kubelet is posting ready status. AppArmor enabled
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - gke.gcr.io/gcp-compute-persistent-disk-csi-driver@sha256:503328b35eea2c6a2685896554d9ba206ff1f9adf12cc772e6b0bc862abea722
+      - gke.gcr.io/gcp-compute-persistent-disk-csi-driver:v1.0.1-gke.0
+      sizeBytes: 187232241
+    - names:
+      - gke.gcr.io/kube-proxy-amd64:v1.18.16-gke.302
+      - k8s.gcr.io/kube-proxy-amd64:v1.18.16-gke.302
+      sizeBytes: 118907181
+    - names:
+      - gke.gcr.io/gke-metrics-agent@sha256:aabb1efa428778b876014d99399826319d81d96ee269e459deb81df7e78d7a57
+      - gke.gcr.io/gke-metrics-agent:0.3.5-gke.0
+      sizeBytes: 109925091
+    - names:
+      - gke.gcr.io/event-exporter@sha256:34b034af960047020f4674151bbb2b55878f82a0b76dabca81b518e9fe82180d
+      - gke.gcr.io/event-exporter:v0.3.4-gke.0
+      sizeBytes: 76860482
+    - names:
+      - gke.gcr.io/prometheus-to-sd@sha256:c5e12680a431990d5e39ed249dcb43a7672e99f7ef94a9928be40cf2f418f62f
+      - gke.gcr.io/prometheus-to-sd:v0.10.0-gke.0
+      sizeBytes: 72131547
+    - names:
+      - gcr.io/stackdriver-agents/metadata-agent-go@sha256:b7d97f6543ebd8d133da944f3631cc2501c16dbc2abc835e741f4dcc8daba3d7
+      - gcr.io/stackdriver-agents/metadata-agent-go:1.2.0
+      sizeBytes: 55482425
+    - names:
+      - gke.gcr.io/fluent-bit@sha256:fb78c311517093a2887151d2e535aec38b82fdfbf0bbe7bdf393433ca2c534a3
+      - gke.gcr.io/fluent-bit:v1.3.11-gke.0
+      sizeBytes: 53315787
+    - names:
+      - asia.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - eu.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - asia.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64:1.7.1-gke.0
+      - eu.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64:1.7.1-gke.0
+      sizeBytes: 43947291
+    - names:
+      - k8s.gcr.io/prometheus-to-sd@sha256:1d49fb3b108e6b42542e4a9b056dee308f06f88824326cde1636eea0472b799d
+      - k8s.gcr.io/prometheus-to-sd:v0.7.2
+      sizeBytes: 42314030
+    - names:
+      - asia.gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - eu.gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - asia.gcr.io/gke-release-staging/cpvpa-amd64:v0.8.1-gke.1
+      - eu.gcr.io/gke-release-staging/cpvpa-amd64:v0.8.1-gke.1
+      sizeBytes: 42307057
+    - names:
+      - k8s.gcr.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e
+      - k8s.gcr.io/prometheus-to-sd:v0.5.0
+      sizeBytes: 41861013
+    - names:
+      - k8s.gcr.io/metrics-server-amd64@sha256:c9c4e95068b51d6b33a9dccc61875df07dc650abbf4ac1a19d58b4628f89288b
+      - k8s.gcr.io/metrics-server-amd64:v0.3.6
+      sizeBytes: 39944451
+    - names:
+      - mnarsupa/angular@sha256:61de7432a9cd6f669d415927f92b51fab0b864dd510c24aed3ceff722b06ce1b
+      - mnarsupa/angular:latest
+      sizeBytes: 38522511
+    - names:
+      - gke.gcr.io/fluent-bit-gke-exporter@sha256:c991a4b851c8fe3a1209bd0ec911d1ff32e37246ff88e46ffe14208d0827075f
+      - gke.gcr.io/fluent-bit-gke-exporter:v0.14.2-gke.0
+      sizeBytes: 38011641
+    - names:
+      - asia.gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - eu.gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - asia.gcr.io/gke-release-staging/addon-resizer:1.8.11-gke.0
+      - eu.gcr.io/gke-release-staging/addon-resizer:1.8.11-gke.0
+      sizeBytes: 33744526
+    - names:
+      - gke.gcr.io/addon-resizer@sha256:39b3b30565c5dc4942630a14b1b7efe4851a986b2895bc76c25cab5303920b61
+      - gke.gcr.io/addon-resizer:1.8.11-gke.1
+      sizeBytes: 33744524
+    - names:
+      - gke.gcr.io/csi-node-driver-registrar@sha256:a8bd233217b0b9d9e0e4973a44ab527e1b8522d46557ab42718efd82bae08720
+      - gke.gcr.io/csi-node-driver-registrar:v1.3.0-gke.0
+      sizeBytes: 17150304
+    - names:
+      - asia.gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - eu.gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - asia.gcr.io/google-containers/pause-amd64:3.0
+      - eu.gcr.io/google-containers/pause-amd64:3.0
+      sizeBytes: 746888
+    - names:
+      - k8s.gcr.io/pause@sha256:927d98197ec1141a368550822d18fa1c60bdae27b78b0c004f705f548c07814f
+      - k8s.gcr.io/pause:3.2
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: fc1fd0c6-3aca-43b7-b0fd-17bdd52f731e
+      containerRuntimeVersion: docker://19.3.14
+      kernelVersion: 5.4.89+
+      kubeProxyVersion: v1.18.16-gke.302
+      kubeletVersion: v1.18.16-gke.302
+      machineID: 1599e1e57ef3e27c3e1ed34e953ec7d2
+      operatingSystem: linux
+      osImage: Container-Optimized OS from Google
+      systemUUID: 1599e1e5-7ef3-e27c-3e1e-d34e953ec7d2
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      container.googleapis.com/instance_id: "21124975939999666"
+      csi.volume.kubernetes.io/nodeid: '{"pd.csi.storage.gke.io":"projects/e-arcana-306104/zones/us-east1-c/instances/gke-mycluster-default-pool-e91db75c-fft6"}'
+      node.alpha.kubernetes.io/ttl: "0"
+      node.gke.io/last-applied-node-labels: cloud.google.com/gke-boot-disk=pd-standard,cloud.google.com/gke-nodepool=default-pool,cloud.google.com/gke-os-distribution=cos,cloud.google.com/machine-family=e2
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2021-04-02T19:01:49Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/instance-type: e2-medium
+      beta.kubernetes.io/os: linux
+      cloud.google.com/gke-boot-disk: pd-standard
+      cloud.google.com/gke-nodepool: default-pool
+      cloud.google.com/gke-os-distribution: cos
+      cloud.google.com/machine-family: e2
+      failure-domain.beta.kubernetes.io/region: us-east1
+      failure-domain.beta.kubernetes.io/zone: us-east1-c
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: gke-mycluster-default-pool-e91db75c-fft6
+      kubernetes.io/os: linux
+      node.kubernetes.io/instance-type: e2-medium
+      topology.gke.io/zone: us-east1-c
+      topology.kubernetes.io/region: us-east1
+      topology.kubernetes.io/zone: us-east1-c
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"CorruptDockerOverlay2"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentContainerdRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentDockerRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentKubeletRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentUnregisterNetDevice"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"KernelDeadlock"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"ReadonlyFilesystem"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: node-problem-detector
+      operation: Update
+      time: "2021-04-02T19:01:50Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:container.googleapis.com/instance_id: {}
+            f:node.gke.io/last-applied-node-labels: {}
+          f:labels:
+            f:cloud.google.com/gke-boot-disk: {}
+            f:cloud.google.com/gke-nodepool: {}
+            f:cloud.google.com/gke-os-distribution: {}
+            f:cloud.google.com/machine-family: {}
+      manager: gcp-controller-manager
+      operation: Update
+      time: "2021-04-02T19:01:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.4.1.0/24": {}
+        f:status:
+          f:conditions:
+            k:{"type":"NetworkUnavailable"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2021-04-02T19:02:08Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:csi.volume.kubernetes.io/nodeid: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/instance-type: {}
+            f:beta.kubernetes.io/os: {}
+            f:failure-domain.beta.kubernetes.io/region: {}
+            f:failure-domain.beta.kubernetes.io/zone: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+            f:node.kubernetes.io/instance-type: {}
+            f:topology.gke.io/zone: {}
+            f:topology.kubernetes.io/region: {}
+            f:topology.kubernetes.io/zone: {}
+        f:spec:
+          f:providerID: {}
+        f:status:
+          f:addresses:
+            .: {}
+            k:{"type":"ExternalIP"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"Hostname"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"InternalDNS"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"InternalIP"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+          f:allocatable:
+            .: {}
+            f:attachable-volumes-gce-pd: {}
+            f:cpu: {}
+            f:ephemeral-storage: {}
+            f:hugepages-2Mi: {}
+            f:memory: {}
+            f:pods: {}
+          f:capacity:
+            .: {}
+            f:attachable-volumes-gce-pd: {}
+            f:cpu: {}
+            f:ephemeral-storage: {}
+            f:hugepages-2Mi: {}
+            f:memory: {}
+            f:pods: {}
+          f:conditions:
+            .: {}
+            k:{"type":"DiskPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"MemoryPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"NetworkUnavailable"}:
+              .: {}
+              f:type: {}
+            k:{"type":"PIDPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:daemonEndpoints:
+            f:kubeletEndpoint:
+              f:Port: {}
+          f:images: {}
+          f:nodeInfo:
+            f:architecture: {}
+            f:bootID: {}
+            f:containerRuntimeVersion: {}
+            f:kernelVersion: {}
+            f:kubeProxyVersion: {}
+            f:kubeletVersion: {}
+            f:machineID: {}
+            f:operatingSystem: {}
+            f:osImage: {}
+            f:systemUUID: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-04-02T19:02:53Z"
+    name: gke-mycluster-default-pool-e91db75c-fft6
+    resourceVersion: "24938"
+    selfLink: /api/v1/nodes/gke-mycluster-default-pool-e91db75c-fft6
+    uid: f7fcf5fc-34bd-4df3-b678-72a3dbefeaa7
+  spec:
+    podCIDR: 10.4.1.0/24
+    podCIDRs:
+    - 10.4.1.0/24
+    providerID: gce://e-arcana-306104/us-east1-c/gke-mycluster-default-pool-e91db75c-fft6
+  status:
+    addresses:
+    - address: 10.142.0.16
+      type: InternalIP
+    - address: 35.243.202.45
+      type: ExternalIP
+    - address: gke-mycluster-default-pool-e91db75c-fft6.us-east1-c.c.e-arcana-306104.internal
+      type: InternalDNS
+    - address: gke-mycluster-default-pool-e91db75c-fft6.us-east1-c.c.e-arcana-306104.internal
+      type: Hostname
+    allocatable:
+      attachable-volumes-gce-pd: "15"
+      cpu: 940m
+      ephemeral-storage: "47093746742"
+      hugepages-2Mi: "0"
+      memory: 2888180Ki
+      pods: "110"
+    capacity:
+      attachable-volumes-gce-pd: "15"
+      cpu: "2"
+      ephemeral-storage: 98868448Ki
+      hugepages-2Mi: "0"
+      memory: 4034036Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: kubelet is functioning properly
+      reason: NoFrequentKubeletRestart
+      status: "False"
+      type: FrequentKubeletRestart
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: docker is functioning properly
+      reason: NoFrequentDockerRestart
+      status: "False"
+      type: FrequentDockerRestart
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: containerd is functioning properly
+      reason: NoFrequentContainerdRestart
+      status: "False"
+      type: FrequentContainerdRestart
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: kernel has no deadlock
+      reason: KernelHasNoDeadlock
+      status: "False"
+      type: KernelDeadlock
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: Filesystem is not read-only
+      reason: FilesystemIsNotReadOnly
+      status: "False"
+      type: ReadonlyFilesystem
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: docker overlay2 is functioning properly
+      reason: NoCorruptDockerOverlay2
+      status: "False"
+      type: CorruptDockerOverlay2
+    - lastHeartbeatTime: "2021-04-02T20:06:57Z"
+      lastTransitionTime: "2021-04-02T19:01:49Z"
+      message: node is functioning properly
+      reason: NoFrequentUnregisterNetDevice
+      status: "False"
+      type: FrequentUnregisterNetDevice
+    - lastHeartbeatTime: "2021-04-02T19:02:08Z"
+      lastTransitionTime: "2021-04-02T19:02:08Z"
+      message: RouteController created a route
+      reason: RouteCreated
+      status: "False"
+      type: NetworkUnavailable
+    - lastHeartbeatTime: "2021-04-02T20:08:37Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:37Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:37Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:37Z"
+      lastTransitionTime: "2021-04-02T19:02:10Z"
+      message: kubelet is posting ready status. AppArmor enabled
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - gke.gcr.io/gcp-compute-persistent-disk-csi-driver@sha256:503328b35eea2c6a2685896554d9ba206ff1f9adf12cc772e6b0bc862abea722
+      - gke.gcr.io/gcp-compute-persistent-disk-csi-driver:v1.0.1-gke.0
+      sizeBytes: 187232241
+    - names:
+      - gke.gcr.io/kube-proxy-amd64:v1.18.16-gke.302
+      - k8s.gcr.io/kube-proxy-amd64:v1.18.16-gke.302
+      sizeBytes: 118907181
+    - names:
+      - gke.gcr.io/gke-metrics-agent@sha256:aabb1efa428778b876014d99399826319d81d96ee269e459deb81df7e78d7a57
+      - gke.gcr.io/gke-metrics-agent:0.3.5-gke.0
+      sizeBytes: 109925091
+    - names:
+      - gke.gcr.io/k8s-dns-kube-dns-amd64@sha256:9e76595f4bf8490bbaff6acfcc1f3243a4bb112481f7f59b3a52c2b09e6ced3c
+      - gke.gcr.io/k8s-dns-kube-dns-amd64:1.15.16-gke.0
+      sizeBytes: 102157349
+    - names:
+      - gke.gcr.io/k8s-dns-sidecar-amd64@sha256:f890a184d953ef2a80f756ff1ab93e92cc6cd76cdb0c89b56d1d30846d72249b
+      - gke.gcr.io/k8s-dns-sidecar-amd64:1.15.16-gke.0
+      sizeBytes: 94439589
+    - names:
+      - gke.gcr.io/k8s-dns-dnsmasq-nanny-amd64@sha256:bd25b644c9e14dcfe77f54ec7f249b151850f6ad23548e02046aa9204fb11d25
+      - gke.gcr.io/k8s-dns-dnsmasq-nanny-amd64:1.15.16-gke.0
+      sizeBytes: 92324592
+    - names:
+      - gke.gcr.io/fluent-bit@sha256:fb78c311517093a2887151d2e535aec38b82fdfbf0bbe7bdf393433ca2c534a3
+      - gke.gcr.io/fluent-bit:v1.3.11-gke.0
+      sizeBytes: 53315787
+    - names:
+      - asia.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - eu.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - asia.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64:1.7.1-gke.0
+      - eu.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64:1.7.1-gke.0
+      sizeBytes: 43947291
+    - names:
+      - k8s.gcr.io/prometheus-to-sd@sha256:1d49fb3b108e6b42542e4a9b056dee308f06f88824326cde1636eea0472b799d
+      - k8s.gcr.io/prometheus-to-sd:v0.7.2
+      sizeBytes: 42314030
+    - names:
+      - asia.gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - eu.gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - asia.gcr.io/gke-release-staging/cpvpa-amd64:v0.8.1-gke.1
+      - eu.gcr.io/gke-release-staging/cpvpa-amd64:v0.8.1-gke.1
+      sizeBytes: 42307057
+    - names:
+      - gke.gcr.io/prometheus-to-sd@sha256:aca8ef83a7fae83f1f8583e978dd4d1ff655b9f2ca0a76bda5edce6d8965bdf2
+      - gke.gcr.io/prometheus-to-sd:v0.4.2
+      sizeBytes: 41861013
+    - names:
+      - k8s.gcr.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e
+      - k8s.gcr.io/prometheus-to-sd:v0.5.0
+      sizeBytes: 41861013
+    - names:
+      - k8s.gcr.io/metrics-server-amd64@sha256:c9c4e95068b51d6b33a9dccc61875df07dc650abbf4ac1a19d58b4628f89288b
+      - k8s.gcr.io/metrics-server-amd64:v0.3.6
+      sizeBytes: 39944451
+    - names:
+      - gke.gcr.io/fluent-bit-gke-exporter@sha256:c991a4b851c8fe3a1209bd0ec911d1ff32e37246ff88e46ffe14208d0827075f
+      - gke.gcr.io/fluent-bit-gke-exporter:v0.14.2-gke.0
+      sizeBytes: 38011641
+    - names:
+      - asia.gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - eu.gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - asia.gcr.io/gke-release-staging/addon-resizer:1.8.11-gke.0
+      - eu.gcr.io/gke-release-staging/addon-resizer:1.8.11-gke.0
+      sizeBytes: 33744526
+    - names:
+      - gke.gcr.io/csi-node-driver-registrar@sha256:a8bd233217b0b9d9e0e4973a44ab527e1b8522d46557ab42718efd82bae08720
+      - gke.gcr.io/csi-node-driver-registrar:v1.3.0-gke.0
+      sizeBytes: 17150304
+    - names:
+      - asia.gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - eu.gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - asia.gcr.io/google-containers/pause-amd64:3.0
+      - eu.gcr.io/google-containers/pause-amd64:3.0
+      sizeBytes: 746888
+    - names:
+      - k8s.gcr.io/pause@sha256:927d98197ec1141a368550822d18fa1c60bdae27b78b0c004f705f548c07814f
+      - k8s.gcr.io/pause:3.2
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: c0f21285-c6a7-44ae-b465-657a2205ac84
+      containerRuntimeVersion: docker://19.3.14
+      kernelVersion: 5.4.89+
+      kubeProxyVersion: v1.18.16-gke.302
+      kubeletVersion: v1.18.16-gke.302
+      machineID: c07d01d646e692875a60461a49158017
+      operatingSystem: linux
+      osImage: Container-Optimized OS from Google
+      systemUUID: c07d01d6-46e6-9287-5a60-461a49158017
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      container.googleapis.com/instance_id: "8537421026505185202"
+      csi.volume.kubernetes.io/nodeid: '{"pd.csi.storage.gke.io":"projects/e-arcana-306104/zones/us-east1-c/instances/gke-mycluster-default-pool-e91db75c-fhg9"}'
+      node.alpha.kubernetes.io/ttl: "0"
+      node.gke.io/last-applied-node-labels: cloud.google.com/gke-boot-disk=pd-standard,cloud.google.com/gke-nodepool=default-pool,cloud.google.com/gke-os-distribution=cos,cloud.google.com/machine-family=e2
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2021-04-02T19:01:50Z"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/instance-type: e2-medium
+      beta.kubernetes.io/os: linux
+      cloud.google.com/gke-boot-disk: pd-standard
+      cloud.google.com/gke-nodepool: default-pool
+      cloud.google.com/gke-os-distribution: cos
+      cloud.google.com/machine-family: e2
+      failure-domain.beta.kubernetes.io/region: us-east1
+      failure-domain.beta.kubernetes.io/zone: us-east1-c
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: gke-mycluster-default-pool-e91db75c-fhg9
+      kubernetes.io/os: linux
+      node.kubernetes.io/instance-type: e2-medium
+      topology.gke.io/zone: us-east1-c
+      topology.kubernetes.io/region: us-east1
+      topology.kubernetes.io/zone: us-east1-c
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:container.googleapis.com/instance_id: {}
+            f:node.gke.io/last-applied-node-labels: {}
+          f:labels:
+            f:cloud.google.com/gke-boot-disk: {}
+            f:cloud.google.com/gke-nodepool: {}
+            f:cloud.google.com/gke-os-distribution: {}
+            f:cloud.google.com/machine-family: {}
+      manager: gcp-controller-manager
+      operation: Update
+      time: "2021-04-02T19:01:52Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"CorruptDockerOverlay2"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentContainerdRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentDockerRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentKubeletRestart"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"FrequentUnregisterNetDevice"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"KernelDeadlock"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"ReadonlyFilesystem"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: node-problem-detector
+      operation: Update
+      time: "2021-04-02T19:01:53Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:node.alpha.kubernetes.io/ttl: {}
+        f:spec:
+          f:podCIDR: {}
+          f:podCIDRs:
+            .: {}
+            v:"10.4.2.0/24": {}
+        f:status:
+          f:conditions:
+            k:{"type":"NetworkUnavailable"}:
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2021-04-02T19:02:08Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:csi.volume.kubernetes.io/nodeid: {}
+            f:volumes.kubernetes.io/controller-managed-attach-detach: {}
+          f:labels:
+            .: {}
+            f:beta.kubernetes.io/arch: {}
+            f:beta.kubernetes.io/instance-type: {}
+            f:beta.kubernetes.io/os: {}
+            f:failure-domain.beta.kubernetes.io/region: {}
+            f:failure-domain.beta.kubernetes.io/zone: {}
+            f:kubernetes.io/arch: {}
+            f:kubernetes.io/hostname: {}
+            f:kubernetes.io/os: {}
+            f:node.kubernetes.io/instance-type: {}
+            f:topology.gke.io/zone: {}
+            f:topology.kubernetes.io/region: {}
+            f:topology.kubernetes.io/zone: {}
+        f:spec:
+          f:providerID: {}
+        f:status:
+          f:addresses:
+            .: {}
+            k:{"type":"ExternalIP"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"Hostname"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"InternalDNS"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+            k:{"type":"InternalIP"}:
+              .: {}
+              f:address: {}
+              f:type: {}
+          f:allocatable:
+            .: {}
+            f:attachable-volumes-gce-pd: {}
+            f:cpu: {}
+            f:ephemeral-storage: {}
+            f:hugepages-2Mi: {}
+            f:memory: {}
+            f:pods: {}
+          f:capacity:
+            .: {}
+            f:attachable-volumes-gce-pd: {}
+            f:cpu: {}
+            f:ephemeral-storage: {}
+            f:hugepages-2Mi: {}
+            f:memory: {}
+            f:pods: {}
+          f:conditions:
+            .: {}
+            k:{"type":"DiskPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"MemoryPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"NetworkUnavailable"}:
+              .: {}
+              f:type: {}
+            k:{"type":"PIDPressure"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastHeartbeatTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:daemonEndpoints:
+            f:kubeletEndpoint:
+              f:Port: {}
+          f:images: {}
+          f:nodeInfo:
+            f:architecture: {}
+            f:bootID: {}
+            f:containerRuntimeVersion: {}
+            f:kernelVersion: {}
+            f:kubeProxyVersion: {}
+            f:kubeletVersion: {}
+            f:machineID: {}
+            f:operatingSystem: {}
+            f:osImage: {}
+            f:systemUUID: {}
+      manager: kubelet
+      operation: Update
+      time: "2021-04-02T19:02:42Z"
+    name: gke-mycluster-default-pool-e91db75c-fhg9
+    resourceVersion: "24949"
+    selfLink: /api/v1/nodes/gke-mycluster-default-pool-e91db75c-fhg9
+    uid: 9eea5882-40bc-41b2-a7dd-254e461ca67d
+  spec:
+    podCIDR: 10.4.2.0/24
+    podCIDRs:
+    - 10.4.2.0/24
+    providerID: gce://e-arcana-306104/us-east1-c/gke-mycluster-default-pool-e91db75c-fhg9
+  status:
+    addresses:
+    - address: 10.142.0.18
+      type: InternalIP
+    - address: 34.73.10.41
+      type: ExternalIP
+    - address: gke-mycluster-default-pool-e91db75c-fhg9.us-east1-c.c.e-arcana-306104.internal
+      type: InternalDNS
+    - address: gke-mycluster-default-pool-e91db75c-fhg9.us-east1-c.c.e-arcana-306104.internal
+      type: Hostname
+    allocatable:
+      attachable-volumes-gce-pd: "15"
+      cpu: 940m
+      ephemeral-storage: "47093746742"
+      hugepages-2Mi: "0"
+      memory: 2888180Ki
+      pods: "110"
+    capacity:
+      attachable-volumes-gce-pd: "15"
+      cpu: "2"
+      ephemeral-storage: 98868448Ki
+      hugepages-2Mi: "0"
+      memory: 4034036Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: kernel has no deadlock
+      reason: KernelHasNoDeadlock
+      status: "False"
+      type: KernelDeadlock
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: Filesystem is not read-only
+      reason: FilesystemIsNotReadOnly
+      status: "False"
+      type: ReadonlyFilesystem
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: docker overlay2 is functioning properly
+      reason: NoCorruptDockerOverlay2
+      status: "False"
+      type: CorruptDockerOverlay2
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: node is functioning properly
+      reason: NoFrequentUnregisterNetDevice
+      status: "False"
+      type: FrequentUnregisterNetDevice
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: kubelet is functioning properly
+      reason: NoFrequentKubeletRestart
+      status: "False"
+      type: FrequentKubeletRestart
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: docker is functioning properly
+      reason: NoFrequentDockerRestart
+      status: "False"
+      type: FrequentDockerRestart
+    - lastHeartbeatTime: "2021-04-02T20:07:01Z"
+      lastTransitionTime: "2021-04-02T19:01:52Z"
+      message: containerd is functioning properly
+      reason: NoFrequentContainerdRestart
+      status: "False"
+      type: FrequentContainerdRestart
+    - lastHeartbeatTime: "2021-04-02T19:02:08Z"
+      lastTransitionTime: "2021-04-02T19:02:08Z"
+      message: RouteController created a route
+      reason: RouteCreated
+      status: "False"
+      type: NetworkUnavailable
+    - lastHeartbeatTime: "2021-04-02T20:08:39Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:39Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:39Z"
+      lastTransitionTime: "2021-04-02T19:01:40Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2021-04-02T20:08:39Z"
+      lastTransitionTime: "2021-04-02T19:02:11Z"
+      message: kubelet is posting ready status. AppArmor enabled
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - gke.gcr.io/gcp-compute-persistent-disk-csi-driver@sha256:503328b35eea2c6a2685896554d9ba206ff1f9adf12cc772e6b0bc862abea722
+      - gke.gcr.io/gcp-compute-persistent-disk-csi-driver:v1.0.1-gke.0
+      sizeBytes: 187232241
+    - names:
+      - gke.gcr.io/kube-proxy-amd64:v1.18.16-gke.302
+      - k8s.gcr.io/kube-proxy-amd64:v1.18.16-gke.302
+      sizeBytes: 118907181
+    - names:
+      - gke.gcr.io/gke-metrics-agent@sha256:aabb1efa428778b876014d99399826319d81d96ee269e459deb81df7e78d7a57
+      - gke.gcr.io/gke-metrics-agent:0.3.5-gke.0
+      sizeBytes: 109925091
+    - names:
+      - gke.gcr.io/k8s-dns-kube-dns-amd64@sha256:9e76595f4bf8490bbaff6acfcc1f3243a4bb112481f7f59b3a52c2b09e6ced3c
+      - gke.gcr.io/k8s-dns-kube-dns-amd64:1.15.16-gke.0
+      sizeBytes: 102157349
+    - names:
+      - gke.gcr.io/k8s-dns-sidecar-amd64@sha256:f890a184d953ef2a80f756ff1ab93e92cc6cd76cdb0c89b56d1d30846d72249b
+      - gke.gcr.io/k8s-dns-sidecar-amd64:1.15.16-gke.0
+      sizeBytes: 94439589
+    - names:
+      - gke.gcr.io/k8s-dns-dnsmasq-nanny-amd64@sha256:bd25b644c9e14dcfe77f54ec7f249b151850f6ad23548e02046aa9204fb11d25
+      - gke.gcr.io/k8s-dns-dnsmasq-nanny-amd64:1.15.16-gke.0
+      sizeBytes: 92324592
+    - names:
+      - gcr.io/stackdriver-agents/metadata-agent-go@sha256:b7d97f6543ebd8d133da944f3631cc2501c16dbc2abc835e741f4dcc8daba3d7
+      - gcr.io/stackdriver-agents/metadata-agent-go:1.2.0
+      sizeBytes: 55482425
+    - names:
+      - gke.gcr.io/fluent-bit@sha256:fb78c311517093a2887151d2e535aec38b82fdfbf0bbe7bdf393433ca2c534a3
+      - gke.gcr.io/fluent-bit:v1.3.11-gke.0
+      sizeBytes: 53315787
+    - names:
+      - asia.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - eu.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64@sha256:e3f48b3d1e49cfa3e7f002020769c9cd01cd0e77bbc99dc133c7ab0f8097e989
+      - asia.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64:1.7.1-gke.0
+      - eu.gcr.io/gke-release-staging/cluster-proportional-autoscaler-amd64:1.7.1-gke.0
+      sizeBytes: 43947291
+    - names:
+      - k8s.gcr.io/prometheus-to-sd@sha256:1d49fb3b108e6b42542e4a9b056dee308f06f88824326cde1636eea0472b799d
+      - k8s.gcr.io/prometheus-to-sd:v0.7.2
+      sizeBytes: 42314030
+    - names:
+      - asia.gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - eu.gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - gcr.io/gke-release-staging/cpvpa-amd64@sha256:4c0ef340ce9c900e939c4dde91466fe98fcd71794c972ca426b06572aa302357
+      - asia.gcr.io/gke-release-staging/cpvpa-amd64:v0.8.1-gke.1
+      - eu.gcr.io/gke-release-staging/cpvpa-amd64:v0.8.1-gke.1
+      sizeBytes: 42307057
+    - names:
+      - gke.gcr.io/prometheus-to-sd@sha256:aca8ef83a7fae83f1f8583e978dd4d1ff655b9f2ca0a76bda5edce6d8965bdf2
+      - gke.gcr.io/prometheus-to-sd:v0.4.2
+      sizeBytes: 41861013
+    - names:
+      - k8s.gcr.io/prometheus-to-sd@sha256:14666989f40bb7c896c3e775a93c6873e2b791d65bc65579f58a078b7f9a764e
+      - k8s.gcr.io/prometheus-to-sd:v0.5.0
+      sizeBytes: 41861013
+    - names:
+      - k8s.gcr.io/metrics-server-amd64@sha256:c9c4e95068b51d6b33a9dccc61875df07dc650abbf4ac1a19d58b4628f89288b
+      - k8s.gcr.io/metrics-server-amd64:v0.3.6
+      sizeBytes: 39944451
+    - names:
+      - gke.gcr.io/fluent-bit-gke-exporter@sha256:c991a4b851c8fe3a1209bd0ec911d1ff32e37246ff88e46ffe14208d0827075f
+      - gke.gcr.io/fluent-bit-gke-exporter:v0.14.2-gke.0
+      sizeBytes: 38011641
+    - names:
+      - asia.gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - eu.gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - gcr.io/gke-release-staging/addon-resizer@sha256:fe1d103a6ccdbee3a8d32fb2b20fe400f16283767040cb295a68d61b1096e91d
+      - asia.gcr.io/gke-release-staging/addon-resizer:1.8.11-gke.0
+      - eu.gcr.io/gke-release-staging/addon-resizer:1.8.11-gke.0
+      sizeBytes: 33744526
+    - names:
+      - gke.gcr.io/addon-resizer@sha256:39b3b30565c5dc4942630a14b1b7efe4851a986b2895bc76c25cab5303920b61
+      - gke.gcr.io/addon-resizer:1.8.11-gke.1
+      sizeBytes: 33744524
+    - names:
+      - gke.gcr.io/csi-node-driver-registrar@sha256:a8bd233217b0b9d9e0e4973a44ab527e1b8522d46557ab42718efd82bae08720
+      - gke.gcr.io/csi-node-driver-registrar:v1.3.0-gke.0
+      sizeBytes: 17150304
+    - names:
+      - k8s.gcr.io/ingress-gce-404-server-with-metrics-amd64@sha256:d83d8a481145d0eb71f8bd71ae236d1c6a931dd3bdcaf80919a8ec4a4d8aff74
+      - k8s.gcr.io/ingress-gce-404-server-with-metrics-amd64:v1.6.0
+      sizeBytes: 13513083
+    - names:
+      - asia.gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - eu.gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - gcr.io/google-containers/pause-amd64@sha256:163ac025575b775d1c0f9bf0bdd0f086883171eb475b5068e7defa4ca9e76516
+      - asia.gcr.io/google-containers/pause-amd64:3.0
+      - eu.gcr.io/google-containers/pause-amd64:3.0
+      sizeBytes: 746888
+    - names:
+      - k8s.gcr.io/pause@sha256:927d98197ec1141a368550822d18fa1c60bdae27b78b0c004f705f548c07814f
+      - k8s.gcr.io/pause:3.2
+      sizeBytes: 682696
+    nodeInfo:
+      architecture: amd64
+      bootID: e360d825-f886-4bd8-823d-ddd0e2e9547d
+      containerRuntimeVersion: docker://19.3.14
+      kernelVersion: 5.4.89+
+      kubeProxyVersion: v1.18.16-gke.302
+      kubeletVersion: v1.18.16-gke.302
+      machineID: a5943a0449d09a9b93eb56277663d5d1
+      operatingSystem: linux
+      osImage: Container-Optimized OS from Google
+      systemUUID: a5943a04-49d0-9a9b-93eb-56277663d5d1
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
